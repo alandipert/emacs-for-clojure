@@ -10,3 +10,16 @@
 
 ;; Go straight to scratch buffer on startup
 (setq inhibit-startup-message t)
+
+;; Misc. vim-like bindings
+(global-set-key (kbd "M-j") 'join-line)
+(global-set-key (kbd "RET") 'newline-and-indent)
+(global-set-key (kbd "C-x *") 'highlight-symbol-next)
+(global-set-key (kbd "C-*") 'highlight-symbol-prev)
+
+;;; dt emulation
+(defadvice zap-to-char (after my-zap-to-char-advice (arg char) activate)
+  "Kill up to the ARG'th occurence of CHAR, and leave CHAR.
+  The CHAR is replaced and the point is put before CHAR."
+  (insert char)
+  (forward-char -1))

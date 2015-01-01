@@ -7,6 +7,9 @@
 ;; Turn off the menu bar at the top of each frame because it's distracting
 (menu-bar-mode -1)
 
+;; Turn off the tool bar too - it's also distracting.
+(tool-bar-mode -1)
+
 ;; Show line numbers
 (global-linum-mode)
 
@@ -27,9 +30,6 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-to-list 'load-path "~/.emacs.d/themes")
 (load-theme 'tomorrow-night-bright t)
-
-;; increase font size for better readability
-(set-face-attribute 'default nil :height 140)
 
 ;; Uncomment the lines below by removing semicolons and play with the
 ;; values in order to set the width (in characters wide) and height
@@ -67,3 +67,45 @@
 
 ;; no bell
 (setq ring-bell-function 'ignore)
+
+;; font size and size management
+
+(set-face-attribute 'default nil :height 100)
+
+(defun increase-font-size ()
+  (interactive)
+  (set-face-attribute 'default nil :height
+                      (ceiling (* 1.10
+                                  (face-attribute 'default :height)))))
+
+(defun decrease-font-size ()
+  (interactive)
+  (set-face-attribute 'default nil :height
+                      (floor (* 0.9
+                                (face-attribute 'default :height)))))
+
+(global-set-key (kbd "C-+") 'increase-font-size)
+(global-set-key (kbd "C--") 'decrease-font-size)
+
+;; linux fullscreen
+
+(defvar my-fullscreen-p t "Check if fullscreen is on or off")
+
+(defun my-non-fullscreen ()
+  (interactive)
+  (progn
+    (set-frame-parameter nil 'width 82)
+    (set-frame-parameter nil 'fullscreen 'fullheight)))
+
+(defun my-fullscreen ()
+  (interactive)
+  (set-frame-parameter nil 'fullscreen 'fullboth))
+
+(defun toggle-fullscreen ()
+  (interactive)
+  (setq my-fullscreen-p (not my-fullscreen-p))
+  (if my-fullscreen-p
+      (my-non-fullscreen)
+    (my-fullscreen)))
+
+(global-set-key (kbd "M-m") 'toggle-fullscreen) 
