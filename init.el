@@ -137,7 +137,7 @@
 (load "setup-clojure.el")
 (load "setup-js.el")
 (load "setup-org.el")
-
+(load "setup-magit.el")
 
 ;; custom.el
 
