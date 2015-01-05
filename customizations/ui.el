@@ -10,6 +10,9 @@
 ;; Turn off the tool bar too - it's also distracting.
 (tool-bar-mode -1)
 
+;; Kill annoying gap between line number and buffer content
+(set-fringe-style -1)
+
 ;; Show line numbers
 (global-linum-mode)
 
