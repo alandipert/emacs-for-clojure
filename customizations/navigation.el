@@ -59,3 +59,7 @@
 
 ;; projectile everywhere!
 (projectile-global-mode)
+
+;;; Diablo mouse setup
+(global-set-key (kbd "<mouse-5>") 'previous-buffer)
+(global-set-key (kbd "<mouse-4>") 'next-buffer)
