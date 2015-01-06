@@ -48,7 +48,10 @@
 
     ;; Dockerfile highlighting
     dockerfile-mode
-    
+
+    ;; to sharing
+    gist
+
     ;; highlight symbols
     highlight-symbol
 
