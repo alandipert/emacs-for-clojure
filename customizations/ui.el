@@ -10,9 +10,6 @@
 ;; Turn off the tool bar too - it's also distracting.
 (tool-bar-mode -1)
 
-;; Kill annoying gap between line number and buffer content
-(set-fringe-style 0)
-
 ;; Show line numbers
 (global-linum-mode)
 
@@ -25,14 +22,8 @@
 (when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))
 
-;; Color Themes
-;; Read http://batsov.com/articles/2012/02/19/color-theming-in-emacs-reloaded/
-;; for a great explanation of emacs color themes.
-;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Custom-Themes.html
-;; for a more technical explanation.
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(add-to-list 'load-path "~/.emacs.d/themes")
-(load-theme 'tomorrow-night-bright t)
+;; Color Theme
+(load-theme 'monokai t)
 
 ;; Uncomment the lines below by removing semicolons and play with the
 ;; values in order to set the width (in characters wide) and height

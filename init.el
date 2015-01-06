@@ -46,6 +46,9 @@
     ;; https://github.com/clojure-emacs/cider
     cider
 
+    ;; Dockerfile highlighting
+    dockerfile-mode
+    
     ;; highlight symbols
     highlight-symbol
 
@@ -53,6 +56,10 @@
     ;; customizations/better-defaults.el line 47 for a description
     ;; of ido
     ido-ubiquitous
+
+    ;; Based on the excellent Monokai theme for TextMate
+    ;; https://studiostyl.es/schemes/monokai
+    monokai-theme
 
     ;; Enhances M-x to allow easier execution of commands. Provides
     ;; a filterable list of possible commands in the minibuffer
