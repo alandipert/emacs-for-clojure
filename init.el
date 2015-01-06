@@ -157,3 +157,4 @@
 
 ;;; start server
 (server-start)
+(put 'erase-buffer 'disabled nil)
