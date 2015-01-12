@@ -37,3 +37,6 @@
   The CHAR is replaced and the point is put before CHAR."
   (insert char)
   (forward-char -1))
+
+;;; Disable suspend-frame binding, which annoyingly minimizes emacs
+(global-unset-key "\C-z")
