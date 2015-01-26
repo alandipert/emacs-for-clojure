@@ -25,6 +25,9 @@
 ;; Go straight to scratch buffer on startup
 (setq inhibit-startup-message t)
 
+;; clojure in *scratch* by default
+(setq initial-major-mode 'clojure-mode)
+
 ;; Misc. vim-like bindings
 (global-set-key (kbd "M-j") 'join-line)
 (global-set-key (kbd "RET") 'newline-and-indent)
