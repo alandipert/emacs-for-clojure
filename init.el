@@ -155,6 +155,8 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
-;;; start server
-(server-start)
+;;; start server if not running
+(when (not (server-running-p))
+  (server-start))
+
 (put 'erase-buffer 'disabled nil)
