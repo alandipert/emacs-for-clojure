@@ -23,7 +23,7 @@
   (scroll-bar-mode -1))
 
 ;; Color Theme
-(load-theme 'monokai t)
+;(load-theme 'monokai t)
 
 ;; Uncomment the lines below by removing semicolons and play with the
 ;; values in order to set the width (in characters wide) and height
